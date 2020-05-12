@@ -5,9 +5,9 @@ const Student = require('../schema/student'); // mongodb model
 const router = express.Router();
 
 router.get('/', cors(), (req, res) => {
-    db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error:'));
-    db.once('open', () => console.log('Student route'));
+    Student.find()
+      .then(result => res.json(result))
+      .catch(err => console.error(err));
 });
 
 router.post('/', cors(), (req, res) => {
