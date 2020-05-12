@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const student = new Schema({
   name: {
     type: String,
-    unique: true,
+    // unique: true,
     required: [true, 'Every student needs a unique username']
   },
   first_name: String,

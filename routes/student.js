@@ -18,4 +18,11 @@ router.post('/', cors(), (req, res) => {
       .catch(err => console.error('Could not save item to database'));
 });
 
+router.put('/', cors(), (req, res) => {
+    Student.find({name: 'John'})
+      .updateMany({name: 'Bob'})
+      .then(result => res.send('Item(s) changed successfully'))
+      .catch(err => console.error(err));
+});
+
 module.exports = router;
