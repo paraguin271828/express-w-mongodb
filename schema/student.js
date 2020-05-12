@@ -11,5 +11,5 @@ const student = new Schema({
   email: String
 });
 
-mongoose.model('Student', student);
+module.exports = mongoose.model('Student', student);
 
